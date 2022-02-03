@@ -3,7 +3,7 @@ import { useState } from "react";
 import type { NextPage } from "next";
 import styled from "@emotion/styled";
 
-import { Segment4 } from "../components";
+import { Segment4, TodoInput } from "../components";
 import { TODO_TYPE } from "../utils";
 
 const Wrap = styled.div`
@@ -17,11 +17,20 @@ const Wrap = styled.div`
 
 const Home: NextPage = () => {
   const [type, setType] = useState(TODO_TYPE.ALL);
+  const [inputText, setInputText] = useState("");
+  const [todoList, setTodoList] = useState<{ text: string; type: string }[]>(
+    []
+  );
 
-  console.log(type);
   const onTap = (e: MouseEvent | TouchEvent | PointerEvent) => {
     const target = e.target as HTMLSpanElement;
-    setType(target.innerText);
+    setType(target.innerText.trim());
+  };
+
+  const onSubmit = () => {
+    if (!inputText) return;
+    setTodoList([...todoList, { text: inputText, type: TODO_TYPE.TODO }]);
+    setInputText("");
   };
 
   return (
@@ -34,6 +43,22 @@ const Home: NextPage = () => {
         label4={TODO_TYPE.DONE}
         tap={onTap}
       />
+      <TodoInput
+        color='14213d'
+        value={inputText}
+        onChange={(text: string) => setInputText(text)}
+        onSubmit={onSubmit}
+        style={{ marginTop: 8 }}
+      />
+      {todoList.map((todo) => {
+        if (type === TODO_TYPE.ALL || todo.type === type) {
+          return (
+            <div key={todo.text}>
+              {todo.text} / {todo.type}
+            </div>
+          );
+        }
+      })}
     </Wrap>
   );
 };

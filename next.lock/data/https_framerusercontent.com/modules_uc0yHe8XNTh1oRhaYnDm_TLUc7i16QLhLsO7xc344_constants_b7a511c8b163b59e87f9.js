@@ -1,0 +1,3 @@
+export const SIZE={BIG:"big",LARGE:"large",MEDIUM:"medium",SMALL:"small",MINI:"mini",NONE:"none"};export const THEME={PRIMARY:"primary",SECONDARY:"secondary",MONO:"mono",WARNING:"warning",DASHED:"dashed",LINE:"line",NONE:"none"};export const ICON={PLUS:"plus",RESET:"reset"};export const TYPE={BUTTON:"button",SUBMIT:"submit"};
+export const __FramerMetadata__ = {"exports":{"SIZE":{"type":"variable","annotations":{"framerContractVersion":"1"}},"THEME":{"type":"variable","annotations":{"framerContractVersion":"1"}},"TYPE":{"type":"variable","annotations":{"framerContractVersion":"1"}},"ICON":{"type":"variable","annotations":{"framerContractVersion":"1"}},"__FramerMetadata__":{"type":"variable"}}}
+//# sourceMappingURL=./constants.map
