@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "yarn clean && next dev",
-    "build": "next dev && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "clean": "rm -rf ./next.lock"
