@@ -3,7 +3,7 @@ import { useState } from "react";
 import type { NextPage } from "next";
 import styled from "@emotion/styled";
 
-import { Segment4, TodoInput } from "../components";
+import { Segment4, SegmentCode, TodoInput } from "../components";
 import { TODO_TYPE } from "../utils";
 
 const Wrap = styled.div`
@@ -42,6 +42,10 @@ const Home: NextPage = () => {
         label3={TODO_TYPE.DOING}
         label4={TODO_TYPE.DONE}
         tap={onTap}
+      />
+      <SegmentCode
+        list={Object.values(TODO_TYPE)}
+        onTabClick={(selected: string) => setType(selected)}
       />
       <TodoInput
         color='14213d'
