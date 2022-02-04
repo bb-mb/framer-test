@@ -3,7 +3,7 @@ import { useState } from "react";
 import type { NextPage } from "next";
 import styled from "@emotion/styled";
 
-import { Segment4, SegmentCode, TodoInput } from "../components";
+import { Button, Segment4, SegmentCode, TodoInput } from "../components";
 import { TODO_TYPE } from "../utils";
 
 const Wrap = styled.div`
@@ -36,6 +36,7 @@ const Home: NextPage = () => {
   return (
     <Wrap>
       <h2>TODO LIST</h2>
+      <Button />
       <Segment4
         label1={TODO_TYPE.ALL}
         label2={TODO_TYPE.TODO}

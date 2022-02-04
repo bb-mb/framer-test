@@ -2,10 +2,11 @@
   "name": "framer-test",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "yarn clean && next dev",
+    "build": "yarn clean && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "clean": "rm -rf ./next.lock"
   },
   "dependencies": {
     "@emotion/react": "^11.7.1",
